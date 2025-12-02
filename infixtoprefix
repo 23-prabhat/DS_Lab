@@ -1,0 +1,56 @@
+#include <iostream>
+#include <stack>
+#include <algorithm>
+using namespace std;
+
+int prec(char c){
+    if(c=='^') return 3;
+    if(c=='*'||c=='/') return 2;
+    if(c=='+'||c=='-') return 1;
+    return -1;
+}
+
+string infixToPrefix(string s){
+    reverse(s.begin(), s.end());
+    for(int i=0;i<s.size();i++){
+        if(s[i]=='(') s[i]=')';
+        else if(s[i]==')') s[i]='(';
+    }
+    stack<char> st;
+    string out="";
+    for(char c:s){
+        if(isalnum(c)) out+=c;
+        else if(c=='(') st.push(c);
+        else if(c==')'){
+            while(!st.empty()&&st.top()!='('){ out+=st.top(); st.pop(); }
+            st.pop();
+        } else{
+            while(!st.empty()&&prec(st.top())>=prec(c)){ out+=st.top(); st.pop(); }
+            st.push(c);
+        }
+    }
+    while(!st.empty()){ out+=st.top(); st.pop(); }
+    reverse(out.begin(), out.end());
+    return out;
+}
+
+string prefixToInfix(string s){
+    stack<string> st;
+    reverse(s.begin(), s.end());
+    for(char c:s){
+        if(isalnum(c)) st.push(string(1,c));
+        else{
+            string a=st.top(); st.pop();
+            string b=st.top(); st.pop();
+            st.push("("+a+string(1,c)+b+")");
+        }
+    }
+    return st.top();
+}
+
+int main(){
+    string inf="(A-B/C)*(A/K-L)";
+    string pre=infixToPrefix(inf);
+    cout<<pre<<endl;
+    cout<<prefixToInfix(pre)<<endl;
+}
