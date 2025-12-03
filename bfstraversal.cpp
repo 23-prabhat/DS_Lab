@@ -31,3 +31,31 @@ int main(){
 
     bfs(1);
 }
+
+
+
+// python
+// from collections import deque
+
+// def bfs(adj, start):
+//     n = len(adj)
+//     visited = [False] * n
+//     q = deque([start])
+//     visited[start] = True
+//     while q:
+//         node = q.popleft()
+//         print(node, end=" ")
+//         for i in range(n):
+//             if adj[node][i] == 1 and not visited[i]:
+//                 visited[i] = True
+//                 q.append(i)
+
+// adj = [
+//     [0,1,1,0,0],
+//     [1,0,1,1,0],
+//     [1,1,0,0,1],
+//     [0,1,0,0,1],
+//     [0,0,1,1,0]
+// ]
+
+// bfs(adj, 0)

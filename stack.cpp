@@ -34,3 +34,38 @@ int main() {
     display();
     cout << peek() << endl;
 }
+
+
+
+
+
+// python
+// class Stack:
+//     def __init__(self):
+//         self.s = []
+
+//     def push(self, x):
+//         self.s.append(x)
+
+//     def pop(self):
+//         if not self.s:
+//             return None
+//         return self.s.pop()
+
+//     def peek(self):
+//         if not self.s:
+//             return None
+//         return self.s[-1]
+
+//     def display(self):
+//         for i in reversed(self.s):
+//             print(i, end=" ")
+//         print()
+
+// st = Stack()
+// st.push(10)
+// st.push(20)
+// st.push(30)
+// st.display()
+// st.pop()
+// st.display()

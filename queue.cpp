@@ -71,3 +71,47 @@ int main() {
 
     return 0;
 }
+
+
+
+
+
+// python
+// class Queue:
+//     def __init__(self, size):
+//         self.size = size
+//         self.q = [None] * size
+//         self.front = -1
+//         self.rear = -1
+
+//     def enqueue(self, x):
+//         if self.rear == self.size - 1:
+//             return
+//         if self.front == -1:
+//             self.front = 0
+//         self.rear += 1
+//         self.q[self.rear] = x
+
+//     def dequeue(self):
+//         if self.front == -1 or self.front > self.rear:
+//             return None
+//         x = self.q[self.front]
+//         self.front += 1
+//         if self.front > self.rear:
+//             self.front = self.rear = -1
+//         return x
+
+//     def display(self):
+//         if self.front == -1:
+//             return
+//         for i in range(self.front, self.rear + 1):
+//             print(self.q[i], end=" ")
+//         print()
+
+// q = Queue(5)
+// q.enqueue(10)
+// q.enqueue(20)
+// q.enqueue(30)
+// q.display()
+// q.dequeue()
+// q.display()

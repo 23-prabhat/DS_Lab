@@ -53,3 +53,51 @@ int main() {
     deleteFront();
     display();
 }
+
+
+
+
+// python
+// class Node:
+//     def __init__(self, x):
+//         self.data = x
+//         self.next = None
+
+// head = None
+
+// def insert_front(x):
+//     global head
+//     n = Node(x)
+//     n.next = head
+//     head = n
+
+// def insert_end(x):
+//     global head
+//     n = Node(x)
+//     if head is None:
+//         head = n
+//         return
+//     t = head
+//     while t.next:
+//         t = t.next
+//     t.next = n
+
+// def delete_front():
+//     global head
+//     if head is None:
+//         return
+//     head = head.next
+
+// def display():
+//     t = head
+//     while t:
+//         print(t.data, end=" ")
+//         t = t.next
+//     print()
+
+// insert_front(20)
+// insert_end(30)
+// insert_front(10)
+// display()
+// delete_front()
+// display()

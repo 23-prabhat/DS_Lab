@@ -64,3 +64,56 @@ int main() {
     q.enqueue(50);
     q.display();
 }
+
+
+
+
+
+// python:
+// class CircularQueue:
+//     def __init__(self, size):
+//         self.size = size
+//         self.q = [None] * size
+//         self.front = -1
+//         self.rear = -1
+
+//     def enqueue(self, x):
+//         if (self.front == 0 and self.rear == self.size-1) or ((self.rear + 1) % self.size == self.front):
+//             return
+//         if self.front == -1:
+//             self.front = self.rear = 0
+//         else:
+//             self.rear = (self.rear + 1) % self.size
+//         self.q[self.rear] = x
+
+//     def dequeue(self):
+//         if self.front == -1:
+//             return None
+//         x = self.q[self.front]
+//         if self.front == self.rear:
+//             self.front = self.rear = -1
+//         else:
+//             self.front = (self.front + 1) % self.size
+//         return x
+
+//     def display(self):
+//         if self.front == -1:
+//             return
+//         i = self.front
+//         while True:
+//             print(self.q[i], end=" ")
+//             if i == self.rear:
+//                 break
+//             i = (i + 1) % self.size
+//         print()
+
+
+// c = CircularQueue(5)
+// c.enqueue(10)
+// c.enqueue(20)
+// c.enqueue(30)
+// c.display()
+// c.dequeue()
+// c.enqueue(40)
+// c.enqueue(50)
+// c.display()

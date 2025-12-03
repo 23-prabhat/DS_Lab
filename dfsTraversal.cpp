@@ -22,3 +22,26 @@ int main(){
 
     dfs(1);
 }
+
+
+
+
+
+// python
+// def dfs(adj, visited, node):
+//     visited[node] = True
+//     print(node, end=" ")
+//     for i in range(len(adj)):
+//         if adj[node][i] == 1 and not visited[i]:
+//             dfs(adj, visited, i)
+
+// adj = [
+//     [0,1,1,0,0],
+//     [1,0,1,1,0],
+//     [1,1,0,0,1],
+//     [0,1,0,0,1],
+//     [0,0,1,1,0]
+// ]
+
+// visited = [False] * len(adj)
+// dfs(adj, visited, 0)

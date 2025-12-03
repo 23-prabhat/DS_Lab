@@ -46,3 +46,48 @@ int main() {
     cout << post << endl;
     cout << postfixToInfix(post) << endl;
 }
+
+
+
+// python
+// def prec(c):
+//     if c == '^': return 3
+//     if c in ('*','/'): return 2
+//     if c in ('+','-'): return 1
+//     return -1
+
+// def infix_to_postfix(s):
+//     st = []
+//     out = ""
+//     for c in s:
+//         if c.isalnum():
+//             out += c
+//         elif c == '(':
+//             st.append(c)
+//         elif c == ')':
+//             while st and st[-1] != '(':
+//                 out += st.pop()
+//             st.pop()
+//         else:
+//             while st and prec(st[-1]) >= prec(c):
+//                 out += st.pop()
+//             st.append(c)
+//     while st:
+//         out += st.pop()
+//     return out
+
+// def postfix_to_infix(s):
+//     st = []
+//     for c in s:
+//         if c.isalnum():
+//             st.append(c)
+//         else:
+//             b = st.pop()
+//             a = st.pop()
+//             st.append("(" + a + c + b + ")")
+//     return st[-1]
+
+// exp = "A+B*(C-D)"
+// post = infix_to_postfix(exp)
+// print(post)
+// print(postfix_to_infix(post))

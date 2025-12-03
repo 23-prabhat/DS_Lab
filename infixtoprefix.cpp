@@ -52,3 +52,61 @@ int main(){
     cout<<pre<<endl;
     cout<<prefixToInfix(pre)<<endl;
 }
+
+
+
+
+// python
+// def prec(c):
+//     if c == '^': return 3
+//     if c in ('*','/'): return 2
+//     if c in ('+','-'): return 1
+//     return -1
+
+// def infix_to_prefix(s):
+//     s = s[::-1]
+//     s = list(s)
+//     for i in range(len(s)):
+//         if s[i] == '(':
+//             s[i] = ')'
+//         elif s[i] == ')':
+//             s[i] = '('
+//     s = "".join(s)
+
+//     st = []
+//     out = ""
+//     for c in s:
+//         if c.isalnum():
+//             out += c
+//         elif c == '(':
+//             st.append(c)
+//         elif c == ')':
+//             while st and st[-1] != '(':
+//                 out += st.pop()
+//             st.pop()
+//         else:
+//             while st and prec(st[-1]) >= prec(c):
+//                 out += st.pop()
+//             st.append(c)
+
+//     while st:
+//         out += st.pop()
+
+//     return out[::-1]
+
+// def prefix_to_infix(s):
+//     st = []
+//     s = s[::-1]
+//     for c in s:
+//         if c.isalnum():
+//             st.append(c)
+//         else:
+//             a = st.pop()
+//             b = st.pop()
+//             st.append("(" + a + c + b + ")")
+//     return st[-1]
+
+// exp = "(A-B/C)*(A/K-L)"
+// pre = infix_to_prefix(exp)
+// print(pre)
+// print(prefix_to_infix(pre))
